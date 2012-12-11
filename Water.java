@@ -3,7 +3,7 @@ import javax.swing.JOptionPane;
 
 public class Water extends Actor {
     public Water() {
-        getImage().scale(6, 6);
+        getImage().scale(10, 10);
     }
 
     public void act() {

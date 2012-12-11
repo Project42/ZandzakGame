@@ -4,7 +4,7 @@ public class Citizen extends Actor {
     private int speed;
 
     public Citizen() {
-        speed = 2;
+        speed = 4;
         getImage().scale(60, 60);
     }
 
