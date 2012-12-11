@@ -1,0 +1,47 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class burger here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Burger extends Actor
+{
+    private int speed;
+
+    public Burger() {
+        speed = 2;
+        getImage().scale(60, 60);
+    }
+
+    @Override
+    public void act() {
+        if (Greenfoot.isKeyDown("w")) move(0, -speed);
+        if (Greenfoot.isKeyDown("s")) move(0, +speed);
+        if (Greenfoot.isKeyDown("a")) move(-speed, 0);
+        if (Greenfoot.isKeyDown("d")) move(+speed, 0);
+        }
+
+
+    private void move(int dx, int dy) {
+        setLocation(getX() + dx, getY() + dy);
+    }
+
+    public void schotSpeed() {
+        speed += 2;
+    }
+
+    public void grindzakSpeed() {
+        speed -= 1;
+    }
+    
+    public void zandzakSpeed() {
+        speed += 0;
+    }
+    
+    public void cementzakSpeed() {
+        speed -= 2;
+    }
+}
+
