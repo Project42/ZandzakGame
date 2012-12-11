@@ -5,7 +5,7 @@ public class Citizen extends Actor {
 
     public Citizen() {
         speed = 4;
-        getImage().scale(60, 60);
+        getImage();
     }
 
     @Override
