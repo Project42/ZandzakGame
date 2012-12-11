@@ -1,6 +1,6 @@
 import greenfoot.*;
-public class Genie extends Actor {
-    public Genie() {
+public class Genius extends Actor {
+    public Genius() {
         getImage().scale(60, 60);
     }
 

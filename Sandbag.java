@@ -8,4 +8,5 @@ public class Sandbag extends Actor {
     public void act() {
 
     }
+
 }

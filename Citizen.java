@@ -14,6 +14,18 @@ public class Citizen extends Actor {
         if (Greenfoot.isKeyDown("s")) move(0, +speed);
         if (Greenfoot.isKeyDown("a")) move(-speed, 0);
         if (Greenfoot.isKeyDown("d")) move(+speed, 0);
+        
+        
+        if(Greenfoot.mouseClicked(null)) {
+            int x = -getImage().getWidth()*4;
+            int y = getImage().getHeight()*4;
+            Water water = (Water) getOneObjectAtOffset(x , y, Water.class);
+            if(water != null) {
+                water.delete();
+               getWorld().addObject(new Sandbag(), x, y);
+                Greenfoot.playSound("sandbag.wav");
+            }
+        }
     }
 
     private void move(int dx, int dy) {

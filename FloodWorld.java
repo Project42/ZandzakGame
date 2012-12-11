@@ -37,4 +37,8 @@ public class FloodWorld extends World {
         
         scoreCounter.add(2);
     }
+    
+    public void countBags(){
+        scoreCounter.add(5);
+    }
 }
