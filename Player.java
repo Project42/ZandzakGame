@@ -3,6 +3,7 @@ import greenfoot.*;
 public abstract class Player extends Actor {
     private int speed;
     private int initialSpeed;
+    private Bag.BagType bagType;
 
     protected Player(int speed) {
         this.initialSpeed = speed;
@@ -33,6 +34,8 @@ public abstract class Player extends Actor {
     }
 
     public void carryBag(Bag bag) {
+        bag.getWorld().removeObject(bag);
         speed = initialSpeed - bag.getWeight();
+        bagType = bag.getType();
     }
 }
