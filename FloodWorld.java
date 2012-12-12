@@ -18,26 +18,25 @@ public class FloodWorld extends World {
         }
 
         addObject(new menuBar(), 40, 80);
-        
+
         for(int i = 0; i <= 80; i++) {
             for(int j = 30; j <= 50; j++) {
                 addObject(new Floodbank(), i, j);
             }
         }
 
-        Citizen citizen = new Citizen();
-        addObject(citizen, 40, 67);
-        
+        addObject(new Citizen(), 40, 67);
+
         scoreCounter = new Counter("Score: ");
         addObject(scoreCounter, 10, 2);
         scoreCounter.add(10);
     }
-    
+
     public void act(){
-        
+
         scoreCounter.add(2);
     }
-    
+
     public void countBags(){
         scoreCounter.add(5);
     }

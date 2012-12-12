@@ -1,10 +1,7 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-public class Police extends Actor
-{
-
-    public void act() 
-    {
-   
-    }    
+public class Police extends Player {
+    public Police() {
+        super(6);
+    }
 }

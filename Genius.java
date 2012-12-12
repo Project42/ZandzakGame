@@ -1,10 +1,7 @@
 import greenfoot.*;
-public class Genius extends Actor {
+
+public class Genius extends Player {
     public Genius() {
-        getImage();
-    }
-
-    public void act()  {
-
+        super(8);
     }
 }

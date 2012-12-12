@@ -1,12 +1,11 @@
 import greenfoot.*;
 
-public class Sandbag extends Actor {
+public class Sandbag extends Actor implements Bag {
     public Sandbag() {
         getImage().scale(30, 30);
     }
 
-    public void act() {
-
+    public int getWeight() {
+        return 2;
     }
-
 }
