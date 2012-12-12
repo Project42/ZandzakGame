@@ -18,14 +18,8 @@ public abstract class Player extends Actor {
         if (Greenfoot.isKeyDown("d")) move(+speed, 0);
 
         if(Greenfoot.mouseClicked(null)) {
-            int x = -getImage().getWidth() * 4;
-            int y = getImage().getHeight() * 4;
-            Water water = (Water)getOneObjectAtOffset(x , y, Water.class);
-            if(water != null) {
-                water.delete();
-                getWorld().addObject(new Sandbag(), x, y);
-                Greenfoot.playSound("sandbag.wav");
-            }
+            getWorld().addObject(new Sandbag(), getX(), getY());
+            Greenfoot.playSound("sandbag.wav");
         }
     }
 
