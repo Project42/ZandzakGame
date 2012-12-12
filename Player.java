@@ -24,22 +24,22 @@ public abstract class Player extends Actor {
     public void act() {
         if (Greenfoot.isKeyDown("w")) {
             move(0, -speed / 4);
-            switchImageLeft();
+            switchImageStraight();
         }
 
         if (Greenfoot.isKeyDown("s")) {
             move(0, +speed / 4);
-            switchImageLeft();
+            switchImageBack();
         }
 
         if (Greenfoot.isKeyDown("a")) {
             move(-speed / 4, 0);
-            switchImageStraight();
+            switchImageLeft();
         }
 
         if (Greenfoot.isKeyDown("d")) {
             move(+speed / 4, 0);
-            switchImageBack();
+            switchImageRight();
         }
 
         if(Greenfoot.mouseClicked(null)) {
