@@ -4,13 +4,13 @@ import javax.swing.JOptionPane;
 public class Water extends Actor {
 
     private int life = 2;
-    
+
     public Water() {
         getImage().scale(10, 10);
     }
 
     public void act() {
-        if (Math.random() > 0.1) return;
+        if (Math.random() > 0.05) return;
         int dx = 0, dy = 0;
         switch ((int)(3.0 * Math.random())) {
             case 0: dx = 0; dy = 1; break;
@@ -27,18 +27,18 @@ public class Water extends Actor {
         if (Sandbag == null) return;
         life -= 1;
         if(life == 0){
-            
+
         getWorld().removeObject(Sandbag);
         getWorld().addObject(new Water(), getX() + dx, getY() + dy);
         }
-        
+
         Actor meadow = getOneObjectAtOffset(0, 0, Meadow.class);
         if (meadow == null) return;
         Greenfoot.stop();
         JOptionPane.showMessageDialog(null, "De dijk is doorgebroken!");
     }
-    
-    public void delete() 
+
+    public void delete()
     {
         ((FloodWorld) getWorld()).countBags();
         getWorld().removeObject(this);

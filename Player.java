@@ -13,10 +13,10 @@ public abstract class Player extends Actor {
 
     @Override
     public void act() {
-        if (Greenfoot.isKeyDown("w")) move(0, -speed);
-        if (Greenfoot.isKeyDown("s")) move(0, +speed);
-        if (Greenfoot.isKeyDown("a")) move(-speed, 0);
-        if (Greenfoot.isKeyDown("d")) move(+speed, 0);
+        if (Greenfoot.isKeyDown("w")) move(0, -speed / 4);
+        if (Greenfoot.isKeyDown("s")) move(0, +speed / 4);
+        if (Greenfoot.isKeyDown("a")) move(-speed / 4, 0);
+        if (Greenfoot.isKeyDown("d")) move(+speed / 4, 0);
 
         if(Greenfoot.mouseClicked(null)) {
             getWorld().addObject(Bag.createBag(bagType), getX(), getY());
