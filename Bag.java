@@ -7,7 +7,7 @@ public class Bag extends Actor {
         SANDBAG, GRAVEL_BAG, CEMENT_BAG
     }
 
-    static Bag newBag(BagType type) {
+    static Bag createBag(BagType type) {
         switch (type) {
             case SANDBAG: return new Sandbag();
             case GRAVEL_BAG: return new GravelBag();

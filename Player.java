@@ -8,6 +8,7 @@ public abstract class Player extends Actor {
     protected Player(int speed) {
         this.initialSpeed = speed;
         this.speed = speed;
+        this.bagType = Bag.BagType.SANDBAG;
     }
 
     @Override
@@ -18,7 +19,7 @@ public abstract class Player extends Actor {
         if (Greenfoot.isKeyDown("d")) move(+speed, 0);
 
         if(Greenfoot.mouseClicked(null)) {
-            getWorld().addObject(new Sandbag(), getX(), getY());
+            getWorld().addObject(Bag.createBag(bagType), getX(), getY());
             Greenfoot.playSound("sandbag.wav");
         }
     }
