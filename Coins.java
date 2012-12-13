@@ -37,8 +37,8 @@ public class Coins extends Actor {
         }
     }
 
-    public void add(int score) {
-        target += score;
+    public void add(int coinz) {
+        target += coinz;
     }
 
     public int getValue() {

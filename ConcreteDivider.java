@@ -21,7 +21,7 @@ public class ConcreteDivider extends Bag
     }
     
     @Override
-    protected int getCost() {
+    public int getCost() {
         return 60;
     }
 }

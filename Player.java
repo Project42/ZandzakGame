@@ -70,7 +70,7 @@ public abstract class Player extends Actor {
  
         if(Greenfoot.mouseClicked(null)) {
             Bag bag = Bag.createBag(bagType);
-            bag.getCost();
+            ((FloodWorld)getWorld()).coinCounter.add(bag.getCost());
             getWorld().addObject(bag, getX(), getY());
             Greenfoot.playSound("sandbag.wav");
         }
@@ -79,10 +79,17 @@ public abstract class Player extends Actor {
         if (water != null) {
             move(0, 1);
         }
+            
+        Actor coin = getOneObjectAtOffset(0, 0, Coin.class);
+        if (coin != null) {
+            getWorld().removeObject(coin);
+            Greenfoot.playSound("Coin.mp3");
+            ((FloodWorld)getWorld()).coinCounter.add(250);
+        }
     }
 
     private void move(int dx, int dy) {
-        if(getY() >= 69) {
+        if(getY() > 69) {
             setLocation(getX() + dx, 69);
             return;
         }

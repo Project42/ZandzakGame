@@ -2,14 +2,14 @@ import greenfoot.*;
 
 public class FloodWorld extends World {
     public boolean stopped;
-    private Counter scoreCounter;
+    public Counter scoreCounter;
     private Player player;
-    private Coins coinCounter;
+    public Coins coinCounter;
     
     public FloodWorld()  {
         super(80, 80, 10);
 
-        setPaintOrder(MenuBar.class, Player.class, Bag.class, Water.class, Floodbank.class);
+        setPaintOrder(GameOverScreen.class, Counter.class, Coins.class, MenuBar.class, Player.class, Bag.class, Coin.class, Water.class, Floodbank.class);
 
         for(int i=0; i<=80; i++) {
             for(int j=0; j<=30; j++) {
@@ -37,13 +37,19 @@ public class FloodWorld extends World {
         addObject(scoreCounter, 10, 2);
         
         coinCounter = new Coins("Coins: ");
-        addObject(scoreCounter, 70, 2);
+        addObject(coinCounter, 70, 2);
         coinCounter.add(10);
     }
 
     public void act(){
-
+        int randomNumber = Greenfoot.getRandomNumber(30);
+        if(randomNumber == 0) {
+              int randomX = Greenfoot.getRandomNumber(80);
+              int randomY = 50 + Greenfoot.getRandomNumber(70 - 50);
+              addObject(new Coin(), randomX, randomY);
+        }
         scoreCounter.add(2);
+        coinCounter.add(1);
     }
     
     public Player getPlayer() {

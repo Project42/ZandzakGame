@@ -6,7 +6,7 @@ public class GravelBag extends Bag {
     }
     
     @Override
-    protected int getCost() {
+    public int getCost() {
         return 20;
     }
 }

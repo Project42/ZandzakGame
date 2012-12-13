@@ -21,7 +21,7 @@ public class WoodenDivider extends Bag
         // Add your action code here.
     }
     @Override
-    protected int getCost() {
+    public int getCost() {
         return 40;
     }
 }

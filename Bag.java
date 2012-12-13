@@ -38,7 +38,7 @@ public class Bag extends Actor {
         }
     }
     
-    protected int getCost() {
+    public int getCost() {
         return 0;
     }
 
