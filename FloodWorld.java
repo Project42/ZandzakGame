@@ -4,6 +4,7 @@ public class FloodWorld extends World {
     public boolean stopped;
     private Counter scoreCounter;
     private Player player;
+    private Coins coinCounter;
     
     public FloodWorld()  {
         super(80, 80, 10);
@@ -34,16 +35,15 @@ public class FloodWorld extends World {
 
         scoreCounter = new Counter("Score: ");
         addObject(scoreCounter, 10, 2);
-        scoreCounter.add(10);
+        
+        coinCounter = new Coins("Coins: ");
+        addObject(scoreCounter, 70, 2);
+        coinCounter.add(10);
     }
 
     public void act(){
 
         scoreCounter.add(2);
-    }
-
-    public void countBags(){
-        scoreCounter.add(5);
     }
     
     public Player getPlayer() {
