@@ -2,8 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class ConcreteDivider here.
- * 
- * @author (your name) 
+ *
+ * @author (your name)
  * @version (a version number or a date)
  */
 public class ConcreteDivider extends Bag
@@ -13,10 +13,10 @@ public class ConcreteDivider extends Bag
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public ConcreteDivider() {
-        super(6);
+        super(6, 5000);
     }
-    public void act() 
+    public void act()
     {
         // Add your action code here.
-    }    
+    }
 }

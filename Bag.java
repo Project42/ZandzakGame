@@ -2,6 +2,7 @@ import greenfoot.*;
 
 public class Bag extends Actor {
     private int weight;
+    private int lifetime;
 
     public enum BagType {
         SANDBAG, GRAVEL_BAG, CEMENT_BAG
@@ -22,8 +23,16 @@ public class Bag extends Actor {
         return null;
     }
 
-    protected Bag(int weight) {
+    protected Bag(int weight, int lifetime) {
         this.weight = weight;
+        this.lifetime = lifetime;
+    }
+
+    public void act() {
+        --lifetime;
+        if (lifetime <= 0) {
+            getWorld().removeObject(this);
+        }
     }
 
     public int getWeight() {
