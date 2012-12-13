@@ -33,5 +33,6 @@ public class Water extends Actor {
         if (meadow == null) return;
         Greenfoot.stop();
         JOptionPane.showMessageDialog(null, "De dijk is doorgebroken!");
+        addObject(new GameOverScreen(), 0, 80);
     }
 }
