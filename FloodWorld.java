@@ -9,7 +9,7 @@ public class FloodWorld extends World {
     public FloodWorld()  {
         super(80, 80, 10);
 
-        setPaintOrder(MenuBar.class, Player.class, Bag.class, Water.class, Floodbank.class);
+        setPaintOrder(GameOverScreen.class, MenuBar.class, Player.class, Bag.class, Water.class, Floodbank.class);
 
         for(int i=0; i<=80; i++) {
             for(int j=0; j<=30; j++) {
