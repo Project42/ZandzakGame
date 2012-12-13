@@ -14,10 +14,14 @@ public class WoodenDivider extends Bag
      */
 
     public WoodenDivider() {
-        super(4, 1200);
+        super(4, 200);
     }
     public void act()
     {
         // Add your action code here.
+    }
+    @Override
+    protected int getCost() {
+        return 40;
     }
 }

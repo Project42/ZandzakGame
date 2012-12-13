@@ -3,10 +3,12 @@ import greenfoot.*;
 public class FloodWorld extends World {
     public boolean stopped;
     private Counter scoreCounter;
+    private Player player;
+    
     public FloodWorld()  {
         super(80, 80, 10);
 
-        setPaintOrder(Player.class, Bag.class, Water.class, Floodbank.class);
+        setPaintOrder(MenuBar.class, Player.class, Bag.class, Water.class, Floodbank.class);
 
         for(int i=0; i<=80; i++) {
             for(int j=0; j<=30; j++) {
@@ -28,7 +30,7 @@ public class FloodWorld extends World {
             }
         }
 
-        addObject(new Citizen(), 40, 67);
+        addObject(player = new Citizen(), 40, 67);
 
         scoreCounter = new Counter("Score: ");
         addObject(scoreCounter, 10, 2);
@@ -42,5 +44,9 @@ public class FloodWorld extends World {
 
     public void countBags(){
         scoreCounter.add(5);
+    }
+    
+    public Player getPlayer() {
+        return player;
     }
 }

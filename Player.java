@@ -17,11 +17,13 @@ public abstract class Player extends Actor {
     protected Player(int speed) {
         this.initialSpeed = speed;
         this.speed = speed;
-        this.bagType = Bag.BagType.SANDBAG;
+        setBagType(Bag.BagType.SANDBAG);
     }
 
     @Override
     public void act() {
+        if (speed / 4 <= 0) speed = 4;
+        
         if (Greenfoot.isKeyDown("w")) {
             move(0, -speed / 4);
             switchImageStraight();
@@ -42,20 +44,60 @@ public abstract class Player extends Actor {
             switchImageRight();
         }
 
+        if (Greenfoot.isKeyDown("1")) {
+            setBagType(Bag.BagType.SANDBAG);
+        }
+        
+        if (Greenfoot.isKeyDown("2")) {
+            setBagType(Bag.BagType.CEMENT_BAG);
+        }
+        
+        if (Greenfoot.isKeyDown("3")) {
+            setBagType(Bag.BagType.SANDBAG);
+        }
+        
+        if (Greenfoot.isKeyDown("4")) {
+            setBagType(Bag.BagType.WOODEN_DIVIDER);
+        }
+
+        if (Greenfoot.isKeyDown("5")) {
+            setBagType(Bag.BagType.IRON_DIVIDER);
+        }
+        
+        if (Greenfoot.isKeyDown("6")) {
+            setBagType(Bag.BagType.CONCRETE_DIVIDER);
+        }
+ 
         if(Greenfoot.mouseClicked(null)) {
-            getWorld().addObject(Bag.createBag(bagType), getX(), getY());
+            Bag bag = Bag.createBag(bagType);
+            bag.getCost();
+            getWorld().addObject(bag, getX(), getY());
             Greenfoot.playSound("sandbag.wav");
+        }
+        
+        Actor water = getOneObjectAtOffset(0, -1, Water.class);
+        if (water != null) {
+            move(0, 1);
         }
     }
 
     private void move(int dx, int dy) {
+        if(getY() >= 69) {
+            setLocation(getX() + dx, 69);
+            return;
+        }
+        
         setLocation(getX() + dx, getY() + dy);
     }
 
     public void carryBag(Bag bag) {
-        bag.getWorld().removeObject(bag);
+        if (bag.getWorld() != null) bag.getWorld().removeObject(bag);
         speed = initialSpeed - bag.getWeight();
         bagType = bag.getType();
+    }
+    
+    public void setBagType(Bag.BagType type) {
+        carryBag(Bag.createBag(type));
     }
 
     protected void switchImageLeft()

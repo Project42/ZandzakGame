@@ -5,7 +5,7 @@ public class Bag extends Actor {
     private int lifetime;
 
     public enum BagType {
-        SANDBAG, GRAVEL_BAG, CEMENT_BAG
+        SANDBAG, GRAVEL_BAG, CEMENT_BAG, WOODEN_DIVIDER, IRON_DIVIDER, CONCRETE_DIVIDER
     }
 
     static Bag createBag(BagType type) {
@@ -13,6 +13,9 @@ public class Bag extends Actor {
             case SANDBAG: return new Sandbag();
             case GRAVEL_BAG: return new GravelBag();
             case CEMENT_BAG: return new CementBag();
+            case WOODEN_DIVIDER: return new WoodenDivider();
+            case IRON_DIVIDER: return new IronDivider();
+            case CONCRETE_DIVIDER: return new ConcreteDivider();
         }
 
         /* Java, being a terrible language, enforces us to write a
@@ -34,6 +37,10 @@ public class Bag extends Actor {
             getWorld().removeObject(this);
         }
     }
+    
+    protected int getCost() {
+        return 0;
+    }
 
     public int getWeight() {
         return weight;
@@ -43,6 +50,9 @@ public class Bag extends Actor {
         if (this.getClass() == Sandbag.class) return BagType.SANDBAG;
         if (this.getClass() == GravelBag.class) return BagType.GRAVEL_BAG;
         if (this.getClass() == CementBag.class) return BagType.CEMENT_BAG;
+        if (this.getClass() == WoodenDivider.class) return BagType.WOODEN_DIVIDER;
+        if (this.getClass() == IronDivider.class) return BagType.IRON_DIVIDER;
+        if (this.getClass() == ConcreteDivider.class) return BagType.CONCRETE_DIVIDER;
 
         assert false;
         return null;

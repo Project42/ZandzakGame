@@ -14,10 +14,15 @@ public class IronDivider extends Bag
      */
 
     public IronDivider() {
-        super(5, 2000);
+        super(5, 250);
     }
     public void act()
     {
         // Add your action code here.
+    }
+    
+    @Override
+    protected int getCost() {
+        return 50;
     }
 }
