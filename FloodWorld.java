@@ -5,6 +5,9 @@ public class FloodWorld extends World {
     private Counter scoreCounter;
     public FloodWorld()  {
         super(80, 80, 10);
+
+        setPaintOrder(Player.class, Bag.class, Water.class, Floodbank.class);
+
         for(int i=0; i<=80; i++) {
             for(int j=0; j<=30; j++) {
                 addObject(new Water(), i, j);

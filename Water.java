@@ -10,6 +10,12 @@ public class Water extends Actor {
     }
 
     public void act() {
+        if (getOneIntersectingObject(Bag.class) != null) {
+            getWorld().addObject(new Floodbank(), getX(), getY());
+            getWorld().removeObject(this);
+            return;
+        }
+
         if (Math.random() > 0.05) return;
         int dx = 0, dy = 0;
         switch ((int)(3.0 * Math.random())) {
@@ -23,24 +29,9 @@ public class Water extends Actor {
         getWorld().removeObject(floodbank);
         getWorld().addObject(new Water(), getX() + dx, getY() + dy);
 
-        Actor Sandbag = getOneObjectAtOffset(dx, dy, Sandbag.class);
-        if (Sandbag == null) return;
-        life -= 1;
-        if(life == 0){
-
-        getWorld().removeObject(Sandbag);
-        getWorld().addObject(new Water(), getX() + dx, getY() + dy);
-        }
-
         Actor meadow = getOneObjectAtOffset(0, 0, Meadow.class);
         if (meadow == null) return;
         Greenfoot.stop();
         JOptionPane.showMessageDialog(null, "De dijk is doorgebroken!");
-    }
-
-    public void delete()
-    {
-        ((FloodWorld) getWorld()).countBags();
-        getWorld().removeObject(this);
     }
 }
