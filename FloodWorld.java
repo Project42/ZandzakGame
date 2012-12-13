@@ -9,7 +9,7 @@ public class FloodWorld extends World {
     public FloodWorld()  {
         super(80, 80, 10);
 
-        setPaintOrder(GameOverScreen.class, MenuBar.class, Player.class, Bag.class, Water.class, Floodbank.class);
+        setPaintOrder(GameOverScreen.class, Counter.class, Coins.class, MenuBar.class, Player.class, Bag.class, Water.class, Floodbank.class);
 
         for(int i=0; i<=80; i++) {
             for(int j=0; j<=30; j++) {
@@ -34,10 +34,10 @@ public class FloodWorld extends World {
         addObject(player = new Citizen(), 40, 67);
 
         scoreCounter = new Counter("Score: ");
-        addObject(scoreCounter, 10, 2);
+        addObject(scoreCounter, 6, 74);
         
         coinCounter = new Coins("Coins: ");
-        addObject(scoreCounter, 70, 2);
+        addObject(coinCounter, 6, 76);
         coinCounter.add(10);
     }
 
