@@ -20,7 +20,7 @@ public class FloodWorld extends World {
             }
         }
 
-        addObject(new MenuBar(), 40, 80);
+        addObject(new MenuBar(), 39, 75);
 
         for(int i = 0; i <= 80; i++) {
             for(int j = 30; j <= 50; j++) {
