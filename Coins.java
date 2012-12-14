@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class Coins extends Actor {
-    private static final Color textColor = new Color(0, 0, 0);
+    private static final Color textColor = new Color(255, 255, 255);
 
     private int value = 0;
     private int target = 0;

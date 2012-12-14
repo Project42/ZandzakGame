@@ -34,10 +34,10 @@ public class FloodWorld extends World {
         addObject(player = new Citizen(), 40, 67);
 
         scoreCounter = new Counter("Score: ");
-        addObject(scoreCounter, 10, 2);
+        addObject(scoreCounter, 6, 74);
         
         coinCounter = new Coins("Coins: ");
-        addObject(coinCounter, 70, 2);
+        addObject(coinCounter, 6, 76);
         coinCounter.add(10);
     }
 
