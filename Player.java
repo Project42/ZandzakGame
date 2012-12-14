@@ -84,7 +84,7 @@ public abstract class Player extends Actor {
         if (coin != null) {
             getWorld().removeObject(coin);
             Greenfoot.playSound("Coin.mp3");
-            ((FloodWorld)getWorld()).coinCounter.add(250);
+            ((FloodWorld)getWorld()).coinCounter.add(1);
         }
     }
 
