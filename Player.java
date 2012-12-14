@@ -53,7 +53,7 @@ public abstract class Player extends Actor {
         }
         
         if (Greenfoot.isKeyDown("3")) {
-            setBagType(Bag.BagType.SANDBAG);
+            setBagType(Bag.BagType.GRAVEL_BAG);
         }
         
         if (Greenfoot.isKeyDown("4")) {
