@@ -6,8 +6,8 @@ import java.awt.Graphics;
 public class Counter extends Actor {
     private static final Color textColor = new Color(255, 255, 255);
 
-    private int value = 0;
-    private int target = 0;
+    public int value = 0;
+    public int target = 0;
     private String text;
     private int stringLength;
 

@@ -7,7 +7,7 @@ public class Bag extends Actor {
     public enum BagType {
         SANDBAG, GRAVEL_BAG, CEMENT_BAG, WOODEN_DIVIDER, IRON_DIVIDER, CONCRETE_DIVIDER
     }
-
+    
     static Bag createBag(BagType type) {
         switch (type) {
             case SANDBAG: return new Sandbag();

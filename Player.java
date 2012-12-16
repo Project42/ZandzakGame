@@ -70,7 +70,7 @@ public abstract class Player extends Actor {
  
         if(Greenfoot.mouseClicked(null)) {
             Bag bag = Bag.createBag(bagType);
-            ((FloodWorld)getWorld()).coinCounter.add(bag.getCost());
+            ((FloodWorld)getWorld()).coinCounter.remove(bag.getCost());
             getWorld().addObject(bag, getX(), getY());
             Greenfoot.playSound("sandbag.wav");
         }
