@@ -6,8 +6,11 @@ public class FloodWorld extends World {
     private Player player;
     public Coins coinCounter;
     
+    GreenfootSound backgroundMusic = new GreenfootSound("zeerstoer.mp3");  
+    
     public FloodWorld()  {
         super(80, 80, 10);
+        backgroundMusic.playLoop();
 
         setPaintOrder(GameOverScreen.class, Counter.class, Coins.class, MenuBar.class, Player.class, Bag.class, Coin.class, Water.class, Floodbank.class);
 
