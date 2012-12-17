@@ -77,7 +77,12 @@ public abstract class Player extends Actor {
         
         Actor water = getOneObjectAtOffset(0, -1, Water.class);
         if (water != null) {
+            switchImageBack();
             move(0, 1);
+            if (Greenfoot.isKeyDown("w")) {
+            move(0, 1);
+        }
+           
         }
             
         Actor coin = getOneObjectAtOffset(0, 0, Coin.class);
