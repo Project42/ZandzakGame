@@ -82,6 +82,8 @@ public abstract class Player extends Actor {
             if (Greenfoot.isKeyDown("w")) {
             move(0, 1);
         }
+           
+        }
             
         }
             
