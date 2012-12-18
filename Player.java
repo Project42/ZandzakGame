@@ -70,14 +70,19 @@ public abstract class Player extends Actor {
  
         if(Greenfoot.mouseClicked(null)) {
             Bag bag = Bag.createBag(bagType);
-            ((FloodWorld)getWorld()).coinCounter.add(bag.getCost());
+            ((FloodWorld)getWorld()).coinCounter.remove(bag.getCost());
             getWorld().addObject(bag, getX(), getY());
             Greenfoot.playSound("sandbag.wav");
         }
         
         Actor water = getOneObjectAtOffset(0, -1, Water.class);
         if (water != null) {
+            switchImageBack();
             move(0, 1);
+            if (Greenfoot.isKeyDown("w")) {
+            move(0, 1);
+        }
+            
         }
             
         Actor coin = getOneObjectAtOffset(0, 0, Coin.class);
