@@ -38,7 +38,6 @@ public class FloodWorld extends World {
         
         coinCounter = new Coins("Coins: ");
         addObject(coinCounter, 6, 76);
-        coinCounter.add(10);
     }
 
     public void act(){
@@ -49,7 +48,7 @@ public class FloodWorld extends World {
               addObject(new Coin(), randomX, randomY);
         }
         scoreCounter.add(2);
-        coinCounter.add(1);
+ 
     }
     
     public Player getPlayer() {

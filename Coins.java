@@ -27,6 +27,11 @@ public class Coins extends Actor {
     }
 
     public void act() {
+            updateImage();
+    }
+
+    public void add(int coinz) {
+        value += coinz;
         if(coinValue < coinTarget) {
             coinValue++;
             updateCoinsImage();
