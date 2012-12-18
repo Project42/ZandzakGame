@@ -4,29 +4,35 @@ public class FloodWorld extends World {
     public boolean stopped;
     public Counter scoreCounter;
     private Player player;
-    public Coins coinCounter;
+    private Coins coinCounter;
+    
+    //GreenfootSound backgroundMusic = new GreenfootSound("zeerstoer.mp3");  
     
     public FloodWorld()  {
-        super(80, 80, 10);
+       super(80, 80, 10);
+        //backgroundMusic.playLoop();
 
         setPaintOrder(GameOverScreen.class, Counter.class, Coins.class, MenuBar.class, Player.class, Bag.class, Coin.class, Water.class, Floodbank.class);
 
         for(int i=0; i<=80; i++) {
             for(int j=0; j<=30; j++) {
+
                 addObject(new Water(), i, j);
             }
         }
 
         for(int i = 0; i <= 80; i++) {
             for(int j = 50; j <= 70; j++) {
+
                 addObject(new Meadow(), i, j);
             }
         }
 
-        addObject(new MenuBar(), 39, 75);
+       addObject(new MenuBar(), 39, 75);
 
         for(int i = 0; i <= 80; i++) {
             for(int j = 30; j <= 50; j++) {
+
                 addObject(new Floodbank(), i, j);
             }
         }
@@ -49,6 +55,10 @@ public class FloodWorld extends World {
         }
         scoreCounter.add(2);
  
+    }
+    
+    public Coins getCoinCounter() {
+        return coinCounter;
     }
     
     public Player getPlayer() {

@@ -6,7 +6,7 @@ import java.awt.Graphics;
 public class Coins extends Actor {
     private static final Color textColor = new Color(255, 255, 255);
 
-    private int coinValue = 0;
+    public int coinValue = 0;
     private int coinTarget = 0;
     private String text;
     private int stringLength;
@@ -27,11 +27,6 @@ public class Coins extends Actor {
     }
 
     public void act() {
-            updateImage();
-    }
-
-    public void add(int coinz) {
-        value += coinz;
         if(coinValue < coinTarget) {
             coinValue++;
             updateCoinsImage();

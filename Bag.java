@@ -1,4 +1,5 @@
 import greenfoot.*;
+import java.util.List;
 
 public class Bag extends Actor {
     private int weight;
@@ -32,9 +33,12 @@ public class Bag extends Actor {
     }
 
     public void act() {
-        --lifetime;
-        if (lifetime <= 0) {
-            getWorld().removeObject(this);
+        List<Actor> waters = getObjectsInRange(2, Water.class);
+        if (!waters.isEmpty()) {
+            --lifetime;
+            if (lifetime <= 0) {
+                getWorld().removeObject(this);
+            }
         }
     }
     

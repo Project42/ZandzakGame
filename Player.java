@@ -70,9 +70,11 @@ public abstract class Player extends Actor {
  
         if(Greenfoot.mouseClicked(null)) {
             Bag bag = Bag.createBag(bagType);
-            ((FloodWorld)getWorld()).coinCounter.remove(bag.getCost());
-            getWorld().addObject(bag, getX(), getY());
-            Greenfoot.playSound("sandbag.wav");
+            if(bag.getCost() <= ((FloodWorld)getWorld()).getCoinCounter().coinValue) {
+                 ((FloodWorld)getWorld()).getCoinCounter().remove(bag.getCost());
+                 getWorld().addObject(bag, getX(), getY());   
+                 Greenfoot.playSound("sandbag.wav");
+            }
         }
         
         Actor water = getOneObjectAtOffset(0, -1, Water.class);
@@ -80,16 +82,15 @@ public abstract class Player extends Actor {
             switchImageBack();
             move(0, 1);
             if (Greenfoot.isKeyDown("w")) {
-            move(0, 1);
-        }
-            
+                move(0, 1);
+            }
         }
             
         Actor coin = getOneObjectAtOffset(0, 0, Coin.class);
         if (coin != null) {
-            getWorld().removeObject(coin);
             Greenfoot.playSound("Coin.mp3");
-            ((FloodWorld)getWorld()).coinCounter.add(1);
+            getWorld().removeObject(coin);
+            ((FloodWorld)getWorld()).getCoinCounter().add(10);
         }
     }
 
