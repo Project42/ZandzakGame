@@ -5,14 +5,15 @@ public class FloodWorld extends World {
     public Counter scoreCounter;
     private Player player;
     private Coins coinCounter;
-    
+    private Overlay overlay;
+
     //GreenfootSound backgroundMusic = new GreenfootSound("zeerstoer.mp3");  
     
     public FloodWorld()  {
         super(80, 80, 10);
         //backgroundMusic.playLoop();
 
-        setPaintOrder(GameOverScreen.class, Counter.class, Coins.class, MenuBar.class, Player.class, Bag.class, Coin.class, Water.class, Floodbank.class);
+        setPaintOrder(GameOverScreen.class, Overlay.class, Counter.class, Coins.class, MenuBar.class, Player.class, Bag.class, Coin.class, Water.class, Floodbank.class);
 
         for(int i=0; i<=80; i++) {
             for(int j=0; j<=30; j++) {
@@ -63,5 +64,13 @@ public class FloodWorld extends World {
     
     public Player getPlayer() {
         return player;
+    }
+    
+    public void setOverlayLocation(int x, int y) {
+        if (overlay == null) {
+        overlay = new Overlay();
+        addObject(overlay, 20, 75);
+        }
+    overlay.setLocation(x, y);
     }
 }

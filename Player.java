@@ -46,26 +46,32 @@ public abstract class Player extends Actor {
 
         if (Greenfoot.isKeyDown("1")) {
             setBagType(Bag.BagType.SANDBAG);
+            ((FloodWorld)getWorld()).setOverlayLocation(12, 75);
         }
         
         if (Greenfoot.isKeyDown("2")) {
             setBagType(Bag.BagType.CEMENT_BAG);
+            ((FloodWorld)getWorld()).setOverlayLocation(23, 75);
         }
         
         if (Greenfoot.isKeyDown("3")) {
             setBagType(Bag.BagType.GRAVEL_BAG);
+            ((FloodWorld)getWorld()).setOverlayLocation(34, 75);
         }
         
         if (Greenfoot.isKeyDown("4")) {
             setBagType(Bag.BagType.WOODEN_DIVIDER);
+            ((FloodWorld)getWorld()).setOverlayLocation(45, 75);
         }
 
         if (Greenfoot.isKeyDown("5")) {
             setBagType(Bag.BagType.IRON_DIVIDER);
+            ((FloodWorld)getWorld()).setOverlayLocation(56, 75);
         }
         
         if (Greenfoot.isKeyDown("6")) {
             setBagType(Bag.BagType.CONCRETE_DIVIDER);
+            ((FloodWorld)getWorld()).setOverlayLocation(67, 75);
         }
  
         if(Greenfoot.mouseClicked(null)) {
@@ -88,7 +94,7 @@ public abstract class Player extends Actor {
             
         Actor coin = getOneObjectAtOffset(0, 0, Coin.class);
         if (coin != null) {
-            Greenfoot.playSound("Coin.mp3");
+            Greenfoot.playSound("Coin.wav");
             getWorld().removeObject(coin);
             ((FloodWorld)getWorld()).getCoinCounter().add(10);
         }

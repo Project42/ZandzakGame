@@ -8,5 +8,8 @@ import greenfoot.*;
  * @version 18 December
  */
 
-public class Overlay extends Actor {
+public class Overlay extends Actor {  
+    public Overlay(){
+        getImage();
+    }
 }
