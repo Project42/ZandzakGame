@@ -10,6 +10,5 @@ import greenfoot.*;
 
 public class Overlay extends Actor {  
     public Overlay(){
-        getImage();
     }
 }
