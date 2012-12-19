@@ -68,9 +68,9 @@ public class FloodWorld extends World {
 
     public void setOverlayLocation(int x, int y) {
         if (overlay == null) {
-        overlay = new Overlay();
-        addObject(overlay, 20, 75);
+            overlay = new Overlay();
+            addObject(overlay, 20, 75);
         }
-    overlay.setLocation(x, y);
+        overlay.setLocation(x, y);
     }
 }
