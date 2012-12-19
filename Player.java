@@ -14,16 +14,31 @@ public abstract class Player extends Actor {
     protected GreenfootImage image7;
     protected GreenfootImage image8;
 
+    public enum PlayerType {
+        CITIZEN, POLICE, GENIUS
+    };
+
     protected Player(int speed) {
         this.initialSpeed = speed;
         this.speed = speed;
         setBagType(Bag.BagType.SANDBAG);
     }
 
+    static public Player createPlayer(PlayerType type) {
+        switch (type) {
+            case CITIZEN: return new Citizen();
+            case POLICE: return new Police();
+            case GENIUS: return new Genius();
+        }
+
+        assert false;
+        return null;
+    }
+
     @Override
     public void act() {
         if (speed / 4 <= 0) speed = 4;
-        
+
         if (Greenfoot.isKeyDown("w")) {
             move(0, -speed / 4);
             switchImageStraight();
@@ -48,17 +63,17 @@ public abstract class Player extends Actor {
             setBagType(Bag.BagType.SANDBAG);
             ((FloodWorld)getWorld()).setOverlayLocation(12, 75);
         }
-        
+
         if (Greenfoot.isKeyDown("2")) {
             setBagType(Bag.BagType.CEMENT_BAG);
             ((FloodWorld)getWorld()).setOverlayLocation(23, 75);
         }
-        
+
         if (Greenfoot.isKeyDown("3")) {
             setBagType(Bag.BagType.GRAVEL_BAG);
             ((FloodWorld)getWorld()).setOverlayLocation(34, 75);
         }
-        
+
         if (Greenfoot.isKeyDown("4")) {
             setBagType(Bag.BagType.WOODEN_DIVIDER);
             ((FloodWorld)getWorld()).setOverlayLocation(45, 75);
@@ -68,21 +83,21 @@ public abstract class Player extends Actor {
             setBagType(Bag.BagType.IRON_DIVIDER);
             ((FloodWorld)getWorld()).setOverlayLocation(56, 75);
         }
-        
+
         if (Greenfoot.isKeyDown("6")) {
             setBagType(Bag.BagType.CONCRETE_DIVIDER);
             ((FloodWorld)getWorld()).setOverlayLocation(67, 75);
         }
- 
+
         if(Greenfoot.mouseClicked(null)) {
             Bag bag = Bag.createBag(bagType);
             if(bag.getCost() <= ((FloodWorld)getWorld()).getCoinCounter().coinValue) {
                  ((FloodWorld)getWorld()).getCoinCounter().remove(bag.getCost());
-                 getWorld().addObject(bag, getX(), getY());   
+                 getWorld().addObject(bag, getX(), getY());
                  Greenfoot.playSound("sandbag.wav");
             }
         }
-        
+
         Actor water = getOneObjectAtOffset(0, -1, Water.class);
         if (water != null) {
             switchImageBack();
@@ -91,7 +106,7 @@ public abstract class Player extends Actor {
                 move(0, 1);
             }
         }
-            
+
         Actor coin = getOneObjectAtOffset(0, 0, Coin.class);
         if (coin != null) {
             Greenfoot.playSound("Coin.wav");
@@ -105,7 +120,7 @@ public abstract class Player extends Actor {
             setLocation(getX() + dx, 69);
             return;
         }
-        
+
         setLocation(getX() + dx, getY() + dy);
     }
 
@@ -114,7 +129,7 @@ public abstract class Player extends Actor {
         speed = initialSpeed - bag.getWeight();
         bagType = bag.getType();
     }
-    
+
     public void setBagType(Bag.BagType type) {
         carryBag(Bag.createBag(type));
     }

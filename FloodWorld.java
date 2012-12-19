@@ -7,9 +7,9 @@ public class FloodWorld extends World {
     private Coins coinCounter;
     private Overlay overlay;
 
-    //GreenfootSound backgroundMusic = new GreenfootSound("zeerstoer.mp3");  
-    
-    public FloodWorld()  {
+    //GreenfootSound backgroundMusic = new GreenfootSound("zeerstoer.mp3");
+
+    public FloodWorld(Player.PlayerType playerType)  {
         super(80, 80, 10);
         //backgroundMusic.playLoop();
 
@@ -38,11 +38,11 @@ public class FloodWorld extends World {
             }
         }
 
-        addObject(player = new Citizen(), 40, 67);
+        addObject(player = Player.createPlayer(playerType), 40, 67);
 
         scoreCounter = new Counter("Score: ");
         addObject(scoreCounter, 6, 74);
-        
+
         coinCounter = new Coins("Coins: ");
         addObject(coinCounter, 6, 76);
     }
@@ -55,17 +55,17 @@ public class FloodWorld extends World {
               addObject(new Coin(), randomX, randomY);
         }
         scoreCounter.add(2);
- 
+
     }
-    
+
     public Coins getCoinCounter() {
         return coinCounter;
     }
-    
+
     public Player getPlayer() {
         return player;
     }
-    
+
     public void setOverlayLocation(int x, int y) {
         if (overlay == null) {
         overlay = new Overlay();
