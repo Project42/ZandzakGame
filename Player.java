@@ -90,12 +90,38 @@ public abstract class Player extends Actor {
         }
 
         if(Greenfoot.mouseClicked(null)) {
+            getX();
+            getY();
+            //die shit hieronder faalt en moet op een andere manier gemaakt worden -> niet in act!
+            /*if((getX() == 78) &&(getY() == 72)||(getX() == 77) &&(getY() == 72)){
+               Greenfoot.stop();
+            }
+            
+            else if(Greenfoot(getX() == 78) &&(getY() == 72)||(getX() == 77) &&(getY() == 72)){
+               Greenfoot.start();
+            }
+            */
+            if(((FloodWorld)getWorld()).backgroundMusic.getVolume() == 100 &&(getX() == 78) &&(getY() == 75)||(getX() == 77) &&(getY() == 75)){
+               ((FloodWorld)getWorld()).backgroundMusic.setVolume(0);
+            }
+           
+            else if(((FloodWorld)getWorld()).backgroundMusic.getVolume() == 0 &&(getX() == 78) &&(getY() == 75)||(getX() == 77) &&(getY() == 75)){
+               ((FloodWorld)getWorld()).backgroundMusic.setVolume(100);
+            }
+            
+            else if((getX() == 78) &&(getY() == 78)||(getX() == 77) &&(getY() == 78)){
+               Greenfoot.stop();
+            }
+            
+            else{
             Bag bag = Bag.createBag(bagType);
             if(bag.getCost() <= ((FloodWorld)getWorld()).getCoinCounter().coinValue) {
                  ((FloodWorld)getWorld()).getCoinCounter().remove(bag.getCost());
                  getWorld().addObject(bag, getX(), getY());
                  Greenfoot.playSound("sandbag.wav");
             }
+        }
+            
         }
 
         Actor water = getOneObjectAtOffset(0, -1, Water.class);
