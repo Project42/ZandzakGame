@@ -1,4 +1,5 @@
 import greenfoot.*;
+import java.lang.Object;
 
 public abstract class Player extends Actor {
     private int speed;
@@ -116,8 +117,9 @@ public abstract class Player extends Actor {
             else{
             Bag bag = Bag.createBag(bagType);
             if(bag.getCost() <= ((FloodWorld)getWorld()).getCoinCounter().coinValue) {
+                  MouseInfo mouse = Greenfoot.getMouseInfo();
                  ((FloodWorld)getWorld()).getCoinCounter().remove(bag.getCost());
-                 getWorld().addObject(bag, getX(), getY());
+                 getWorld().addObject(bag, mouse.getX(), (mouse.getY()));
                  Greenfoot.playSound("sandbag.wav");
             }
         }
