@@ -19,10 +19,6 @@ public class Bag extends Actor {
             case CONCRETE_DIVIDER: return new ConcreteDivider();
         }
 
-        /* Java, being a terrible language, enforces us to write a
-         * return statement, even when that return statement will
-         * never EVER be reached since all possible cases in the
-         * switch return. */
         assert false;
         return null;
     }
