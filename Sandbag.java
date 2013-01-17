@@ -7,7 +7,7 @@ public class Sandbag extends Bag {
     }
     
     @Override
-    protected int getCost() {
+    public int getCost() {
         return 10;
     }
 }

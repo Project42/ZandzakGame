@@ -1,4 +1,5 @@
 import greenfoot.*;
+import java.util.List;
 
 public class Bag extends Actor {
     private int weight;
@@ -7,7 +8,7 @@ public class Bag extends Actor {
     public enum BagType {
         SANDBAG, GRAVEL_BAG, CEMENT_BAG, WOODEN_DIVIDER, IRON_DIVIDER, CONCRETE_DIVIDER
     }
-
+    
     static Bag createBag(BagType type) {
         switch (type) {
             case SANDBAG: return new Sandbag();
@@ -18,10 +19,6 @@ public class Bag extends Actor {
             case CONCRETE_DIVIDER: return new ConcreteDivider();
         }
 
-        /* Java, being a terrible language, enforces us to write a
-         * return statement, even when that return statement will
-         * never EVER be reached since all possible cases in the
-         * switch return. */
         assert false;
         return null;
     }
@@ -32,13 +29,16 @@ public class Bag extends Actor {
     }
 
     public void act() {
-        --lifetime;
-        if (lifetime <= 0) {
-            getWorld().removeObject(this);
+        List<Actor> waters = getObjectsInRange(2, Water.class);
+        if (!waters.isEmpty()) {
+            --lifetime;
+            if (lifetime <= 0) {
+                getWorld().removeObject(this);
+            }
         }
     }
     
-    protected int getCost() {
+    public int getCost() {
         return 0;
     }
 

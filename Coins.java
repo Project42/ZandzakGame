@@ -4,10 +4,10 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class Coins extends Actor {
-    private static final Color textColor = new Color(0, 0, 0);
+    private static final Color textColor = new Color(255, 255, 255);
 
-    private int value = 0;
-    private int target = 0;
+    public int coinValue = 0;
+    private int coinTarget = 0;
     private String text;
     private int stringLength;
 
@@ -23,31 +23,34 @@ public class Coins extends Actor {
         GreenfootImage image = getImage();
         image.setColor(textColor);
 
-        updateImage();
+        updateCoinsImage();
     }
 
     public void act() {
-        if(value < target) {
-            value++;
-            updateImage();
+        if(coinValue < coinTarget) {
+            coinValue++;
+            updateCoinsImage();
         }
-        else if(value > target) {
-            value--;
-            updateImage();
+        else if(coinValue > coinTarget) {
+            coinValue--;
+            updateCoinsImage();
         }
     }
 
-    public void add(int score) {
-        target += score;
+    public void add(int coinz) {
+        coinTarget += coinz;
+    }
+    
+    public void remove(int coinz) {
+        coinTarget -= coinz;
     }
 
-    public int getValue() {
-        return value;
+    public int getCoinValue() {
+        return coinValue;
     }
-
-    private void updateImage() {
+    private void updateCoinsImage() {
         GreenfootImage image = getImage();
         image.clear();
-        image.drawString(text + value, 1, 12);
+        image.drawString(text + coinValue, 1, 12);
     }
 }

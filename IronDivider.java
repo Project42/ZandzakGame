@@ -22,7 +22,7 @@ public class IronDivider extends Bag
     }
     
     @Override
-    protected int getCost() {
+    public int getCost() {
         return 50;
     }
 }
