@@ -135,7 +135,7 @@ public abstract class Player extends Actor {
             }
         }
 
-        Actor coin = getOneObjectAtOffset(0, 0, Coin.class);
+        Actor coin = getOneIntersectingObject(Coin.class);
         if (coin != null) {
             Greenfoot.playSound("Coin.wav");
             getWorld().removeObject(coin);
