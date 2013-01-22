@@ -1,4 +1,5 @@
 import greenfoot.*;
+import java.io.IOException;
 
 public class FloodWorld extends World {
     public boolean stopped;
@@ -13,7 +14,7 @@ public class FloodWorld extends World {
         super(80, 80, 10);
         backgroundMusic.playLoop();
 
-        setPaintOrder(GameOverScreen.class, Overlay.class, Counter.class, Coins.class, MenuBar.class, Player.class, Bag.class, Coin.class, Water.class, Floodbank.class);
+        setPaintOrder(Overlay.class, Counter.class, Coins.class, MenuBar.class, Player.class, Bag.class, Coin.class, Water.class, Floodbank.class);
 
         for(int i=0; i<=80; i++) {
             for(int j=0; j<=30; j++) {
@@ -72,5 +73,15 @@ public class FloodWorld extends World {
             addObject(overlay, 20, 75);
         }
         overlay.setLocation(x, y);
+    }
+    
+    public void gameOver() {
+        HighScore highScore = HighScore.askName(scoreCounter.getValue());
+        try {
+            highScore.save(HighScore.defaultFilenameForGame(Game.SANDBAG_GAME));
+            Greenfoot.setWorld(new GameOverWorld(Game.SANDBAG_GAME));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

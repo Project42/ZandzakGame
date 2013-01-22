@@ -31,8 +31,6 @@ public class Water extends Actor {
 
         Actor meadow = getOneObjectAtOffset(0, 0, Meadow.class);
         if (meadow == null) return;
-        Greenfoot.stop();
-        JOptionPane.showMessageDialog(null, "De dijk is doorgebroken!");
-        getWorld().addObject(new GameOverScreen(), 40, 40);
+        ((FloodWorld)getWorld()).gameOver();
     }
 }
