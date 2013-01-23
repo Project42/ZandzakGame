@@ -1,5 +1,4 @@
 import greenfoot.*;
-import java.io.IOException;
 
 public class FloodWorld extends World {
     public boolean stopped;
@@ -76,12 +75,6 @@ public class FloodWorld extends World {
     }
     
     public void gameOver() {
-        HighScore highScore = HighScore.askName(scoreCounter.getValue());
-        try {
-            highScore.save(HighScore.defaultFilenameForGame(Game.SANDBAG_GAME));
-            Greenfoot.setWorld(new GameOverWorld(Game.SANDBAG_GAME));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Greenfoot.setWorld(new GameOverWorld(Game.SANDBAG_GAME, scoreCounter.getValue()));
     }
 }
