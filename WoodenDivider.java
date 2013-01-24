@@ -15,7 +15,7 @@ public class WoodenDivider extends Bag
 
     public WoodenDivider() {
         super(4, 1);
-        getImage().scale(50,50);
+        getImage().scale(75,50);
     }
     public void act()
     {
