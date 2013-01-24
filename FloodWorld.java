@@ -6,6 +6,7 @@ public class FloodWorld extends World {
     private Player player;
     private Coins coinCounter;
     private Overlay overlay;
+    private MuteButton muteButton;
 
     GreenfootSound backgroundMusic = new GreenfootSound("zeerstoer.mp3");
 
@@ -13,7 +14,7 @@ public class FloodWorld extends World {
         super(80, 80, 10);
         backgroundMusic.playLoop();
 
-        setPaintOrder(Overlay.class, Counter.class, Coins.class, MenuBar.class, Player.class, Bag.class, Coin.class, Water.class, Floodbank.class);
+        setPaintOrder(MuteButton.class, Overlay.class, Counter.class, Coins.class, MenuBar.class, Player.class, Bag.class, Coin.class, Water.class, Floodbank.class);
 
         for(int i=0; i<=80; i++) {
             for(int j=0; j<=30; j++) {
@@ -45,6 +46,8 @@ public class FloodWorld extends World {
 
         coinCounter = new Coins("Coins: ");
         addObject(coinCounter, 6, 76);
+
+        addObject(muteButton = new MuteButton(), 30, 30);
     }
 
     public void act(){
@@ -73,7 +76,7 @@ public class FloodWorld extends World {
         }
         overlay.setLocation(x, y);
     }
-    
+
     public void gameOver() {
         Greenfoot.setWorld(new GameOverWorld(Game.SANDBAG_GAME, scoreCounter.getValue()));
     }
