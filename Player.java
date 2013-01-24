@@ -144,20 +144,15 @@ public abstract class Player extends Actor {
         }
 
         Actor coin = getOneIntersectingObject(Coin.class);
-<<<<<<< HEAD
-        if (coin != null) {
-           GreenfootSound coinSound = new GreenfootSound("Coin.wav");
-           coinSound.setVolume(75); 
-           coinSound.play();
-=======
+
         if (coin != null) {        
             if (coinSound == null) {
                 coinSound = new GreenfootSound("Coin.wav");
                 ((FloodWorld)getWorld()).getMuteButton().registerSound(coinSound);
             }
+            coinSound.setVolume(75); 
             coinSound.play();
             
->>>>>>> 1726acc9569b1df019bb476288c674672292a7c8
             getWorld().removeObject(coin);
             ((FloodWorld)getWorld()).getCoinCounter().add(10);
         }

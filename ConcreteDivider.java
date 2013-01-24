@@ -13,7 +13,7 @@ public class ConcreteDivider extends Bag
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public ConcreteDivider() {
-        super(6, 5);
+        super(6, 3);
         getImage().scale(75,50);
     }
     public void act()
