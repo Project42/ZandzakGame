@@ -94,17 +94,6 @@ public abstract class Player extends Actor {
         }
 
         if(Greenfoot.mouseClicked(null)) {
-            getX();
-            getY();
-            //die shit hieronder faalt en moet op een andere manier gemaakt worden -> niet in act!
-            /*if((getX() == 78) &&(getY() == 72)||(getX() == 77) &&(getY() == 72)){
-               Greenfoot.stop();
-            }
-            
-            else if(Greenfoot(getX() == 78) &&(getY() == 72)||(getX() == 77) &&(getY() == 72)){
-               Greenfoot.start();
-            }
-            */
             if(((FloodWorld)getWorld()).backgroundMusic.getVolume() == 100 &&(getX() == 78) &&(getY() == 75)||(getX() == 77) &&(getY() == 75)){
                ((FloodWorld)getWorld()).backgroundMusic.setVolume(0);
             }
