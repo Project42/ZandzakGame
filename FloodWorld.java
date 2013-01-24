@@ -13,7 +13,7 @@ public class FloodWorld extends World {
         super(80, 80, 10);
         backgroundMusic.playLoop();
 
-        setPaintOrder(GameOverScreen.class, Overlay.class, Counter.class, Coins.class, MenuBar.class, Player.class, Bag.class, Coin.class, Water.class, Floodbank.class);
+        setPaintOrder(Overlay.class, Counter.class, Coins.class, MenuBar.class, Player.class, Bag.class, Coin.class, Water.class, Floodbank.class);
 
         for(int i=0; i<=80; i++) {
             for(int j=0; j<=30; j++) {
