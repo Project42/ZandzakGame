@@ -47,7 +47,8 @@ public class FloodWorld extends World {
         coinCounter = new Coins("Coins: ");
         addObject(coinCounter, 6, 76);
 
-        addObject(muteButton = new MuteButton(), 30, 30);
+        addObject(muteButton = new MuteButton(), 75, 75);
+        muteButton.registerSound(backgroundMusic);
     }
 
     public void act(){
@@ -75,6 +76,10 @@ public class FloodWorld extends World {
             addObject(overlay, 20, 75);
         }
         overlay.setLocation(x, y);
+    }
+    
+    public MuteButton getMuteButton() {
+        return muteButton;
     }
 
     public void gameOver() {

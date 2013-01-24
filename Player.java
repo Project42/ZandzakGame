@@ -14,6 +14,9 @@ public abstract class Player extends Actor {
     protected GreenfootImage image6;
     protected GreenfootImage image7;
     protected GreenfootImage image8;
+    
+    private static GreenfootSound sandbagSound;
+    private static GreenfootSound coinSound;
 
     public enum PlayerType {
         CITIZEN, POLICE, GENIUS
@@ -117,10 +120,15 @@ public abstract class Player extends Actor {
             else{
             Bag bag = Bag.createBag(bagType);
             if(bag.getCost() <= ((FloodWorld)getWorld()).getCoinCounter().coinValue) {
-                  MouseInfo mouse = Greenfoot.getMouseInfo();
-                 ((FloodWorld)getWorld()).getCoinCounter().remove(bag.getCost());
-                 getWorld().addObject(bag, mouse.getX(), (mouse.getY()));
-                 Greenfoot.playSound("sandbag.wav");
+                MouseInfo mouse = Greenfoot.getMouseInfo();
+                ((FloodWorld)getWorld()).getCoinCounter().remove(bag.getCost());
+                getWorld().addObject(bag, mouse.getX(), (mouse.getY()));
+                
+                if (sandbagSound == null) {
+                    sandbagSound = new GreenfootSound("sandbag.wav");
+                    ((FloodWorld)getWorld()).getMuteButton().registerSound(sandbagSound);
+                }
+                sandbagSound.play();
             }
         }
             
@@ -136,8 +144,13 @@ public abstract class Player extends Actor {
         }
 
         Actor coin = getOneIntersectingObject(Coin.class);
-        if (coin != null) {
-            Greenfoot.playSound("Coin.wav");
+        if (coin != null) {        
+            if (coinSound == null) {
+                coinSound = new GreenfootSound("Coin.wav");
+                ((FloodWorld)getWorld()).getMuteButton().registerSound(coinSound);
+            }
+            coinSound.play();
+            
             getWorld().removeObject(coin);
             ((FloodWorld)getWorld()).getCoinCounter().add(10);
         }
