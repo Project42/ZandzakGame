@@ -1,7 +1,7 @@
 import greenfoot.*;
 import java.util.List;
 
-public class Bag extends Actor {
+public abstract class Bag extends Actor {
     private int weight;
     private int lifetime;
 
@@ -38,9 +38,7 @@ public class Bag extends Actor {
         }
     }
     
-    public int getCost() {
-        return 0;
-    }
+    public abstract int getCost();
 
     public int getWeight() {
         return weight;
