@@ -73,4 +73,8 @@ public class FloodWorld extends World {
         }
         overlay.setLocation(x, y);
     }
+    
+    public void gameOver() {
+        Greenfoot.setWorld(new GameOverWorld(Game.SANDBAG_GAME, scoreCounter.getValue()));
+    }
 }
