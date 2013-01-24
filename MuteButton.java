@@ -7,7 +7,7 @@ public class MuteButton extends Actor {
     private boolean muted;
 
     public MuteButton() {
-        mute();
+        unmute();
     }
 
     @Override
