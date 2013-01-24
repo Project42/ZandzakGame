@@ -2,8 +2,8 @@ import greenfoot.*;
 
 public class CementBag extends Bag {
     public CementBag() {
-        super(3, 150);
-        getImage().scale(30, 30);
+        super(3, 7);
+        getImage().scale(50,50);
     }
     
     @Override

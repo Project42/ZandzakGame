@@ -58,6 +58,11 @@ public class FloodWorld extends World {
 
     }
 
+    public Counter getScoreCounter() {
+        return scoreCounter;
+    }
+
+    
     public Coins getCoinCounter() {
         return coinCounter;
     }

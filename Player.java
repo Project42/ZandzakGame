@@ -66,12 +66,12 @@ public abstract class Player extends Actor {
         }
 
         if (Greenfoot.isKeyDown("2")) {
-            setBagType(Bag.BagType.CEMENT_BAG);
+            setBagType(Bag.BagType.GRAVEL_BAG);
             ((FloodWorld)getWorld()).setOverlayLocation(23, 75);
         }
 
         if (Greenfoot.isKeyDown("3")) {
-            setBagType(Bag.BagType.GRAVEL_BAG);
+            setBagType(Bag.BagType.CEMENT_BAG);
             ((FloodWorld)getWorld()).setOverlayLocation(34, 75);
         }
 
@@ -137,7 +137,9 @@ public abstract class Player extends Actor {
 
         Actor coin = getOneIntersectingObject(Coin.class);
         if (coin != null) {
-            Greenfoot.playSound("Coin.wav");
+           GreenfootSound coinSound = new GreenfootSound("Coin.wav");
+           coinSound.setVolume(75); 
+           coinSound.play();
             getWorld().removeObject(coin);
             ((FloodWorld)getWorld()).getCoinCounter().add(10);
         }

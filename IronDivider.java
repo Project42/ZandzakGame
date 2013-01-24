@@ -14,7 +14,8 @@ public class IronDivider extends Bag
      */
 
     public IronDivider() {
-        super(5, 250);
+        super(5, 4);
+        getImage().scale(75,50);
     }
     public void act()
     {

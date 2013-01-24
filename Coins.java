@@ -48,6 +48,7 @@ public class Coins extends Actor {
     public int getCoinValue() {
         return coinValue;
     }
+    
     private void updateCoinsImage() {
         GreenfootImage image = getImage();
         image.clear();
