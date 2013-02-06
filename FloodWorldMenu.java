@@ -9,7 +9,12 @@ public class FloodWorldMenu extends World {
 
     @Override
     public void act() {
-<<<<<<< HEAD
+      if (Greenfoot.isKeyDown("enter")) {
+           setBackground("achtergrondSelectie.png");
+           nextMenu = true;
+      }
+
+        
         if (Greenfoot.isKeyDown("1")) {
             Greenfoot.setWorld(new FloodWorld(SandbagPlayer.PlayerType.POLICE));
             return;
@@ -23,28 +28,6 @@ public class FloodWorldMenu extends World {
         if (Greenfoot.isKeyDown("3")) {
             Greenfoot.setWorld(new FloodWorld(SandbagPlayer.PlayerType.CITIZEN));
             return;
-=======
-        if (Greenfoot.isKeyDown("enter")) {
-            setBackground("achtergrondSelectie.png");
-            nextMenu = true;
-        }
-        
-        if (nextMenu == true) {
-            if (Greenfoot.isKeyDown("1")) {
-                Greenfoot.setWorld(new FloodWorld(Player.PlayerType.POLICE));
-                return;
-            }
-    
-            if (Greenfoot.isKeyDown("2")) {
-                Greenfoot.setWorld(new FloodWorld(Player.PlayerType.GENIUS));
-                return;
-            }
-    
-            if (Greenfoot.isKeyDown("3")) {
-                Greenfoot.setWorld(new FloodWorld(Player.PlayerType.CITIZEN));
-                return;
-            }
->>>>>>> 380c07292c09508898ec8fd506c88756e594a30c
         }
     }
 }
