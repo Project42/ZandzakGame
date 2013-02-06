@@ -1,6 +1,6 @@
 import greenfoot.*;
 
-public class Sandbag extends Bag {
+public class Sandbag extends SandbagBag {
     public Sandbag() {
         super(1, 5);
         getImage().scale(50,50);

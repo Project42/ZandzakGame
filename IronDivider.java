@@ -1,6 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class IronDivider extends Bag
+public class IronDivider extends SandbagBag
 {
     public IronDivider() {
         super(5, 2);

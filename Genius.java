@@ -1,6 +1,6 @@
 import greenfoot.*;
 
-public class Genius extends Player {
+public class Genius extends SandbagPlayer {
     public Genius() {
         super(8);
 

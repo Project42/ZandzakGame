@@ -3,7 +3,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.util.Calendar;
 
-public class ScoreBoard extends Actor {
+public class SandbagScoreBoard extends Actor {
     public static final float FONT_SIZE = 48.0f;
     public static final int WIDTH = 400;
     public static final int HEIGHT = 300;
@@ -11,14 +11,14 @@ public class ScoreBoard extends Actor {
     /**
      * Create a score board with dummy result for testing.
      */
-    public ScoreBoard() {
+    public SandbagScoreBoard() {
         this(100);
     }
 
     /**
      * Create a score board for the final result.
      */
-    public ScoreBoard(int score)
+    public SandbagScoreBoard(int score)
     {
         makeImage("Game Over", "Score: ", score);
     }

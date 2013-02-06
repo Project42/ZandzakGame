@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Meadow extends Actor {
-    public Meadow() {
+public class SandbagMeadow extends Actor {
+    public SandbagMeadow() {
         getImage().scale(10, 10);
     }
 }

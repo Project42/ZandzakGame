@@ -1,6 +1,6 @@
 import greenfoot.*;
 
-public class Police extends Player {
+public class Police extends SandbagPlayer {
     public Police() {
         super(6);
 

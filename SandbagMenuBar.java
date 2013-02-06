@@ -1,8 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class MenuBar extends Actor
+public class SandbagMenuBar extends Actor
 {
-    public MenuBar(){
+    public SandbagMenuBar(){
         getImage();
     }
 }

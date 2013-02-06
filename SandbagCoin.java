@@ -1,10 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Coin extends Actor
+public class SandbagCoin extends Actor
 {
-    private int randomNumber;
-    
-    public Coin(){
+    public SandbagCoin(){
         getImage().scale(20, 20);
     }  
 }

@@ -1,24 +1,24 @@
 import greenfoot.*;
 import javax.swing.JOptionPane;
 
-public class Water extends Actor {
+public class SandbagWater extends Actor {
 
     private int life = 2;
 
-    public Water() {
+    public SandbagWater() {
         getImage().scale(10, 10);
     }
 
     public void act() {
         checkDifficulty();
         
-        if (getOneIntersectingObject(Bag.class) != null) {
-            getWorld().addObject(new Floodbank(), getX(), getY());
+        if (getOneIntersectingObject(SandbagBag.class) != null) {
+            getWorld().addObject(new SandbagFloodbank(), getX(), getY());
             getWorld().removeObject(this);
             return;
         }
 
-        Actor meadow = getOneObjectAtOffset(0, 0, Meadow.class);
+        Actor meadow = getOneObjectAtOffset(0, 0, SandbagMeadow.class);
         if (meadow == null) return;
         ((FloodWorld)getWorld()).gameOver();
         JOptionPane.showMessageDialog(null, "De dijk is doorgebroken!");
@@ -35,10 +35,10 @@ public class Water extends Actor {
                 case 2: dx = -1; dy = 0; break;
             }
 
-        Actor floodbank = getOneObjectAtOffset(dx, dy, Floodbank.class);
+        Actor floodbank = getOneObjectAtOffset(dx, dy, SandbagFloodbank.class);
             if (floodbank == null) return;
             getWorld().removeObject(floodbank);
-            getWorld().addObject(new Water(), getX() + dx, getY() + dy);
+            getWorld().addObject(new SandbagWater(), getX() + dx, getY() + dy);
             
         }
         
@@ -50,10 +50,10 @@ public class Water extends Actor {
                     case 1: dx = 1; dy = 0; break;
                     case 2: dx = -1; dy = 0; break;
                 }
-        Actor floodbank = getOneObjectAtOffset(dx, dy, Floodbank.class);
+        Actor floodbank = getOneObjectAtOffset(dx, dy, SandbagFloodbank.class);
             if (floodbank == null) return;
             getWorld().removeObject(floodbank);
-            getWorld().addObject(new Water(), getX() + dx, getY() + dy);
+            getWorld().addObject(new SandbagWater(), getX() + dx, getY() + dy);
                 
             
         }
@@ -66,10 +66,10 @@ public class Water extends Actor {
                     case 1: dx = 1; dy = 0; break;
                     case 2: dx = -1; dy = 0; break;
                 }
-        Actor floodbank = getOneObjectAtOffset(dx, dy, Floodbank.class);
+        Actor floodbank = getOneObjectAtOffset(dx, dy, SandbagFloodbank.class);
             if (floodbank == null) return;
             getWorld().removeObject(floodbank);
-            getWorld().addObject(new Water(), getX() + dx, getY() + dy);
+            getWorld().addObject(new SandbagWater(), getX() + dx, getY() + dy);
                 
             
         }
@@ -82,10 +82,10 @@ public class Water extends Actor {
                     case 1: dx = 1; dy = 0; break;
                     case 2: dx = -1; dy = 0; break;
                 }
-        Actor floodbank = getOneObjectAtOffset(dx, dy, Floodbank.class);
+        Actor floodbank = getOneObjectAtOffset(dx, dy, SandbagFloodbank.class);
             if (floodbank == null) return;
             getWorld().removeObject(floodbank);
-            getWorld().addObject(new Water(), getX() + dx, getY() + dy);
+            getWorld().addObject(new SandbagWater(), getX() + dx, getY() + dy);
                 
             
         }
@@ -98,10 +98,10 @@ public class Water extends Actor {
                     case 1: dx = 1; dy = 0; break;
                     case 2: dx = -1; dy = 0; break;
                 }
-         Actor floodbank = getOneObjectAtOffset(dx, dy, Floodbank.class);
+         Actor floodbank = getOneObjectAtOffset(dx, dy, SandbagFloodbank.class);
             if (floodbank == null) return;
             getWorld().removeObject(floodbank);
-            getWorld().addObject(new Water(), getX() + dx, getY() + dy);
+            getWorld().addObject(new SandbagWater(), getX() + dx, getY() + dy);
                
             
         }
@@ -114,10 +114,10 @@ public class Water extends Actor {
                     case 1: dx = 1; dy = 0; break;
                     case 2: dx = -1; dy = 0; break;
                 }
-        Actor floodbank = getOneObjectAtOffset(dx, dy, Floodbank.class);
+        Actor floodbank = getOneObjectAtOffset(dx, dy, SandbagFloodbank.class);
             if (floodbank == null) return;
             getWorld().removeObject(floodbank);
-            getWorld().addObject(new Water(), getX() + dx, getY() + dy);
+            getWorld().addObject(new SandbagWater(), getX() + dx, getY() + dy);
                 
             
         }
@@ -130,10 +130,10 @@ public class Water extends Actor {
                     case 1: dx = 1; dy = 0; break;
                     case 2: dx = -1; dy = 0; break;
                 }
-        Actor floodbank = getOneObjectAtOffset(dx, dy, Floodbank.class);
+        Actor floodbank = getOneObjectAtOffset(dx, dy, SandbagFloodbank.class);
             if (floodbank == null) return;
             getWorld().removeObject(floodbank);
-            getWorld().addObject(new Water(), getX() + dx, getY() + dy);
+            getWorld().addObject(new SandbagWater(), getX() + dx, getY() + dy);
                 
             
         }
@@ -146,10 +146,10 @@ public class Water extends Actor {
                     case 1: dx = 1; dy = 0; break;
                     case 2: dx = -1; dy = 0; break;
                 }
-        Actor floodbank = getOneObjectAtOffset(dx, dy, Floodbank.class);
+        Actor floodbank = getOneObjectAtOffset(dx, dy, SandbagFloodbank.class);
             if (floodbank == null) return;
             getWorld().removeObject(floodbank);
-            getWorld().addObject(new Water(), getX() + dx, getY() + dy);
+            getWorld().addObject(new SandbagWater(), getX() + dx, getY() + dy);
                 
             
         }
@@ -162,10 +162,10 @@ public class Water extends Actor {
                     case 1: dx = 1; dy = 0; break;
                     case 2: dx = -1; dy = 0; break;
                 }
-        Actor floodbank = getOneObjectAtOffset(dx, dy, Floodbank.class);
+        Actor floodbank = getOneObjectAtOffset(dx, dy, SandbagFloodbank.class);
             if (floodbank == null) return;
             getWorld().removeObject(floodbank);
-            getWorld().addObject(new Water(), getX() + dx, getY() + dy);
+            getWorld().addObject(new SandbagWater(), getX() + dx, getY() + dy);
                 
             
         }

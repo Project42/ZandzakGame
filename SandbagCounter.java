@@ -3,7 +3,7 @@ import greenfoot.*;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Counter extends Actor {
+public class SandbagCounter extends Actor {
     private static final Color textColor = new Color(255, 255, 255);
 
     public int value = 0;
@@ -11,11 +11,11 @@ public class Counter extends Actor {
     private String text;
     private int stringLength;
 
-    public Counter() {
+    public SandbagCounter() {
         this("");
     }
 
-    public Counter(String prefix) {
+    public SandbagCounter(String prefix) {
         text = prefix;
         stringLength = (text.length() + 2) * 10;
 

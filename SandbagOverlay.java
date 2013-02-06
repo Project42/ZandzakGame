@@ -8,7 +8,7 @@ import greenfoot.*;
  * @version 18 December
  */
 
-public class Overlay extends Actor {  
-    public Overlay(){
+public class SandbagOverlay extends Actor {  
+    public SandbagOverlay(){
     }
 }

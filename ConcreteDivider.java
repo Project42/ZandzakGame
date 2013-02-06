@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 
-public class ConcreteDivider extends Bag
+public class ConcreteDivider extends SandbagBag
 {
 
     public ConcreteDivider() {

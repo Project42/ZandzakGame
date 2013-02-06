@@ -2,14 +2,14 @@ import greenfoot.*;
 import java.util.Collection;
 import java.util.HashSet;
 
-public class MuteButton extends Actor {
+public class SandbagMuteButton extends Actor {
     private static GreenfootImage mutedImage;
     private static GreenfootImage unmutedImage;
 
     private boolean muted;
     private Collection<GreenfootSound> registeredSounds;
 
-    public MuteButton() {
+    public SandbagMuteButton() {
         registeredSounds = new HashSet<GreenfootSound>();
         unmute();
     }

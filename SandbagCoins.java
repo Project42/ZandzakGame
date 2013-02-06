@@ -3,7 +3,7 @@ import greenfoot.*;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Coins extends Actor {
+public class SandbagCoins extends Actor {
     private static final Color textColor = new Color(255, 255, 255);
 
     public int coinValue = 0;
@@ -11,11 +11,11 @@ public class Coins extends Actor {
     private String text;
     private int stringLength;
 
-    public Coins() {
+    public SandbagCoins() {
         this("");
     }
 
-    public Coins(String prefix) {
+    public SandbagCoins(String prefix) {
         text = prefix;
         stringLength = (text.length() + 2) * 10;
 

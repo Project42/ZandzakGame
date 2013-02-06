@@ -1,7 +1,7 @@
 import greenfoot.*;
 import java.util.List;
 
-public abstract class Bag extends Actor {
+public abstract class SandbagBag extends Actor {
     private int weight;
     private int lifetime;
 
@@ -9,7 +9,7 @@ public abstract class Bag extends Actor {
         SANDBAG, GRAVEL_BAG, CEMENT_BAG, WOODEN_DIVIDER, IRON_DIVIDER, CONCRETE_DIVIDER
     }
     
-    static Bag createBag(BagType type) {
+    static SandbagBag createBag(BagType type) {
         switch (type) {
             case SANDBAG: return new Sandbag();
             case GRAVEL_BAG: return new GravelBag();
@@ -23,13 +23,13 @@ public abstract class Bag extends Actor {
         return null;
     }
 
-    protected Bag(int weight, int lifetime) {
+    protected SandbagBag(int weight, int lifetime) {
         this.weight = weight;
         this.lifetime = lifetime;
     }
 
     public void act() {
-        List<Actor> waters = getObjectsInRange(2, Water.class);
+        List<Actor> waters = getObjectsInRange(2, SandbagWater.class);
         if (!waters.isEmpty()) {
             --lifetime;
             if (lifetime <= 0) {

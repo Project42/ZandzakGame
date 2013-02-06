@@ -1,6 +1,6 @@
 import greenfoot.*;
 
-public class Citizen extends Player {
+public class Citizen extends SandbagPlayer {
     public Citizen() {
         super(4);
 
